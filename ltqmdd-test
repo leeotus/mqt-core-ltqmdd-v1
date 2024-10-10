@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# 检查是否提供了输入文件作为参数
+if [ $# -ne 1 ]; then
+    echo "Please input a file!"
+    exit 1
+fi
+
+input_file="$1"
+
+./build/apps/ltqmddv1-original-sifting $input_file &
+./build/apps/ltqmddv1-upper $input_file &
+./build/apps/ltqmddv1-lower $input_file &
+./build/apps/ltqmddv1-mix $input_file &
+
+wait

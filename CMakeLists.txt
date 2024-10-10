@@ -47,7 +47,7 @@ handle_submodule(pybind11_json)
 
 add_subdirectory(src)
 
-option(BUILD_QFR_TESTS "Also build tests for QFR project" OFF)
+option(BUILD_QFR_TESTS "Also build tests for QFR project" ON)
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME OR BUILD_QFR_TESTS)
 	enable_testing()
 	include(GoogleTest)
