@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 
 	//sifting 到收敛
 	int old_size=0;
-	for(int i=0; i<30; ++i)
+	for(int i=0; i<100; ++i)
 	{
 		reorderdd = dd->dynamicReorder(reorderdd, varMap, dd::DynamicReorderingStrategy::mixlinearSifting);
 		sifting_size = dd->size(reorderdd);
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 	endtime=(double)(end-start)/CLOCKS_PER_SEC;
 	auto conv_sifting_time = endtime;
 	int conv_sifting_size = sifting_size;
-	cout<<fileName<<' '<<dd_size<<' '<<one_sifting_size<<' '<<one_sifting_time<<' '<<conv_sifting_size<<' '<<conv_sifting_time<<endl;
+	cout<< "original???:" << fileName<<' '<<dd_size<<' '<<one_sifting_size<<' '<<one_sifting_time<<' '<<conv_sifting_size<<' '<<conv_sifting_time<<endl;
 
     return 0;
 }
